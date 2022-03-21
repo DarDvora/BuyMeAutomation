@@ -24,6 +24,7 @@ public class IntroRegistration {
     }
     public void clickRegister (){
         driver.findElement(By.id("ember1822")).click();
+
     }
 
 
