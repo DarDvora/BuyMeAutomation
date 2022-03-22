@@ -43,25 +43,21 @@ public class BuyMeSanityTest extends IntroRegistration {
 
     @Test(priority = 3)
     public void amountSelection() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement amount =driver.findElement(By.cssSelector("span[alt=סכום]"));
         wait.until(ExpectedConditions.elementToBeClickable(amount));
         amount.click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("ember1066"))).click();
-        //driver.findElement(By.id("ember1066")).click();
 
         WebElement area =driver.findElement(By.cssSelector("span[alt=אזור]"));
         wait.until(ExpectedConditions.elementToBeClickable(area));
         area.click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("ember1101"))).click();
-        //driver.findElement(By.id("ember1101")).click();
 
 
         WebElement category =driver.findElement(By.cssSelector("span[alt=קטגוריה]"));
         wait.until(ExpectedConditions.elementToBeClickable(category));
         category.click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("ember1161"))).click();
-        //driver.findElement(By.id("ember1161")).click();
 
 
     }
@@ -80,9 +76,27 @@ public class BuyMeSanityTest extends IntroRegistration {
     }
     @Test(priority = 6)
     public void pickBusiness(){
-        WebElement TevaNaot = driver.findElement(By.id("ember2563"));
+        WebElement TevaNaot = driver.findElement(By.xpath("//*[@id=\"ember2089\"]/div[2]"));
         TevaNaot.click();
     }
+
+    @Test (priority = 7)
+    public void insertAmount(){
+        WebElement insertAmount = driver.findElement(By.id("ember2295"));
+        insertAmount.sendKeys("500");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ember2301\"]"))).click();
+    }
+
+    @Test(priority = 8)
+    public void sender(){
+        WebElement anotherone = driver.findElement(By.xpath("//*[@id=\"ember3139\"]"));
+        wait.until(ExpectedConditions.elementToBeClickable(anotherone));
+        anotherone.click();
+
+
+
+    }
+
 
 }
 

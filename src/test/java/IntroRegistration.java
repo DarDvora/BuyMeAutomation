@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class IntroRegistration {
@@ -23,7 +24,7 @@ public class IntroRegistration {
         rePassword.sendKeys(Constants.PASSWORD);
     }
     public void clickRegister (){
-        driver.findElement(By.id("ember1822")).click();
+     driver.findElement(By.id("ember1822")).click();
 
     }
 
