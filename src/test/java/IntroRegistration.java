@@ -9,7 +9,8 @@ public class IntroRegistration {
 
     public IntroRegistration (){ this.driver = SingletonWebDriver.chromeWebDriver();}
 
-    public void entrance (){driver.get("https://buyme.co.il/");}
+    public void entrance (){driver.get("https://buyme.co.il/");
+    driver.manage().window().maximize();}
 
     public void pressIntroRegistration (){driver.findElement(By.className("notSigned")).click();}
 

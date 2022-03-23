@@ -88,13 +88,66 @@ public class BuyMeSanityTest extends IntroRegistration {
     }
 
     @Test(priority = 8)
-    public void sender(){
-        WebElement anotherone = driver.findElement(By.xpath("//*[@id=\"ember3139\"]"));
+    public void sender() throws InterruptedException {
+        Thread.sleep(5000);
+        WebElement anotherone = driver.findElement(By.className("button-forSomeone"));
         wait.until(ExpectedConditions.elementToBeClickable(anotherone));
         anotherone.click();
 
+    }
+    @Test (priority = 9)
+    public void blessing() throws InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        WebElement reciverName = driver.findElement(By.xpath("//*[@id=\"ember2427\"]"));
+        Thread.sleep(5000);
+        reciverName.sendKeys("Sara");
 
+    }
+    @Test (priority = 10)
+    public void event (){
+        WebElement eventsDropdown = driver.findElement(By.className("selected-name"));
+        wait.until(ExpectedConditions.elementToBeClickable(eventsDropdown));
+        eventsDropdown.click();
 
+        WebElement thanks = driver.findElement(By.xpath("//*[@id=\"ember2524\"]"));
+        wait.until(ExpectedConditions.elementToBeClickable(thanks));
+        thanks.click();
+
+    }
+    @Test (priority = 11)
+    public void textArea(){
+        WebElement clearText = driver.findElement(By.tagName("textarea"));
+        clearText.clear();
+        clearText.sendKeys("thank you");
+    }
+
+    @Test (priority = 12)
+    public void uploadImage() throws InterruptedException {
+        WebElement upload = driver.findElement(By.id("ember2447"));
+        Thread.sleep(5000);
+        upload.sendKeys("C:\\Users\\Dvora.W10N-LNX-DVORAD\\Desktop\\IMG_0031.JPG");
+        Thread.sleep(15000);
+    }
+    @Test (priority = 13)
+    public void continues (){
+        WebElement continues = driver.findElement(By.cssSelector("button[type=submit]"));
+        continues.click();
+    }
+    @Test (priority = 14)
+    public void now () throws InterruptedException {
+        WebElement now = driver.findElement(By.id("ember2562"));
+
+        WebElement email = driver.findElement(By.cssSelector("svg[gtm=method-email]"));
+        wait.until(ExpectedConditions.elementToBeClickable(email));
+        email.click();
+
+        WebElement sendEmail = driver.findElement(By.id("email"));
+        Thread.sleep(3000);
+        sendEmail.sendKeys("ddd@d.com");
+
+        WebElement payment = driver.findElement(By.id("ember2596"));
+        wait.until(ExpectedConditions.elementToBeClickable(payment));
+        payment.click();
     }
 
 
